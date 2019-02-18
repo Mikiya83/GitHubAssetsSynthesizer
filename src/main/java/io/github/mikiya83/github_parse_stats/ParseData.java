@@ -160,7 +160,8 @@ public class ParseData {
 						}
 						lastDate = assetDate;
 
-						if (filterShort && activeDays < 1) {
+						// Filter for last release or more than 1 day of "last" state
+						if (filterShort && activeDays < 1 && count != 0) {
 							continue;
 						}
 
