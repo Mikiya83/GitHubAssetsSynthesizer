@@ -22,6 +22,8 @@ import org.apache.commons.cli.Options;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 /**
  * GitHub Data synthesizer
@@ -126,6 +128,8 @@ public class ParseData {
 				// create ObjectMapper instance
 				ObjectMapper objectMapper = new ObjectMapper();
 				objectMapper.findAndRegisterModules();
+				objectMapper.registerModule(new Jdk8Module());
+				objectMapper.registerModule(new JavaTimeModule());
 
 				// read JSON like DOM Parser
 				List<GitHubData> rootNode = objectMapper.readValue(inputLine, new TypeReference<List<GitHubData>>() {
