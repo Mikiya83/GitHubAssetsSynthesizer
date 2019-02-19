@@ -9,6 +9,10 @@ Parse public GitHub API to extract assets data on a project.
 
 Tool under GNU version 3 license.
 
+# Signing:
+
+All files in my releases are signed with public key : https://keybase.io/yoannttz/pgp_keys.asc
+
 # Description:
 
 CLI tool to print data about GitHub project assets.
